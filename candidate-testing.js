@@ -37,6 +37,7 @@ function gradeQuiz(candidateAnswers) {
   for(let i = 0; i < questions.length; i++){
     if(candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
         console.log(`Question ${[i + 1]} : Correct!`);
+        grade++
         }else{
         console.log(`Question ${[i + 1]} Incorrect! Correct Answer: ${correctAnswers[i]}.`);
       }
@@ -52,15 +53,13 @@ function runProgram() {
   gradeQuiz(this.candidateAnswers);
 
   //Grade The Quizz
-  console.log("---------------------------------");
-  console.log(" Quizz Results");
   console.log(`Candidate Name: ${candidateName} `);
     for(let i = 0; i < questions.length; i++){
       console.log(questions[i]);
       console.log(` Your answer: ${candidateAnswers[i]}`);
       console.log(` Correct Answer: ${correctAnswers[i]}`);
     }
-    console.log(">>> Overall Grade: " + (grade / questions.length * 100) + "% (" + grade + " of 5 rsponses correct) <<<");
+    console.log(">>> Overall Grade: " + (grade / questions.length) * 100 + "% (" + grade + " of 5 responses correct) <<<");
     if(grade / questions.length * 100 >= 80) {
       console.log(">>> Status: PASSED <<<");
     } else {
