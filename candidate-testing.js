@@ -15,7 +15,6 @@ let questions = ["Who was the first American woman in space? ",
                  "What is the minimum crew size for the ISS? "];
 let correctAnswers = ["Sally Ride", "true", "40", "Trajectory", "3"];
 let candidateAnswers = [];
-let grade = 0;
 
 
 function askForName() {
@@ -34,6 +33,7 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
+  let grade = 0;
   for(i = 0; i < questions.length; i++){
     if(candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
         console.log("Question " + [i + 1] +": Correct!");
@@ -42,17 +42,6 @@ function gradeQuiz(candidateAnswers) {
         console.log("Question " + [i + 1]+": Incorrect! Correct Answer: " + correctAnswers[i] + ".");
       }
   }
-  return grade;
-}
-
-function runProgram() {
-  
-  askForName();
-  // TODO 1.1c: Ask for candidate's name //
-  console.log(`Hello: ${candidateName}!`);
-  askQuestion();
-  gradeQuiz(this.candidateAnswers);
-
   //Grade The Quizz
   console.log(`Candidate Name: ${candidateName} `);
     for(i = 0; i < questions.length; i++){
@@ -66,6 +55,16 @@ function runProgram() {
     } else {
       console.log(">>> Status: FAILED <<<");
     }
+  return grade;
+}
+
+function runProgram() {
+  
+  askForName();
+  // TODO 1.1c: Ask for candidate's name //
+  console.log(`Hello: ${candidateName}!`);
+  askQuestion();
+  gradeQuiz(this.candidateAnswers);
 }
 
 // Don't write any code below this line //
