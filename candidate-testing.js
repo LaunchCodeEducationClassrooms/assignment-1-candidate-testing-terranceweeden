@@ -45,6 +45,7 @@ function gradeQuiz(candidateAnswers) {
   for(let i = 0; i < questions.length; i++){
     if(candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
         console.log(`Question ${[i + 1]} : ${correctAnswers[i]} correct`);
+        grade++;
         }else{
         console.log(`Question ${[i + 1]} Incorrect answer!`);
       }
@@ -69,7 +70,7 @@ function runProgram() {
       console.log(` Correct Answer: ${correctAnswers[i]}`);
     }
     console.log(">>> Overall Grade: " + (grade / questions.length * 100) + "% (" + grade + " of 5 rsponses correct) <<<");
-    if(grade / question.length * 100 >= 80) {
+    if(grade / questions.length * 100 >= 80) {
       console.log(">>> Status: PASSED <<<");
     } else {
       console.log(">>> Status: FAILED <<<");
