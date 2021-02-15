@@ -37,7 +37,7 @@ function gradeQuiz(candidateAnswers) {
   for(i = 0; i < questions.length; i++){
     if(candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
         console.log("Question " + [i + 1] +": Correct!");
-        grade++
+        grade++;
         }else{
         console.log("Question " + [i + 1]+": Incorrect! Correct Answer: " + correctAnswers[i] + ".");
       }
@@ -46,6 +46,7 @@ function gradeQuiz(candidateAnswers) {
 }
 
 function runProgram() {
+  
   askForName();
   // TODO 1.1c: Ask for candidate's name //
   console.log(`Hello: ${candidateName}!`);
