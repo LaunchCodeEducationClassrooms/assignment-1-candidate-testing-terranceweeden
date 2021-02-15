@@ -33,30 +33,33 @@ function askQuestion() {
 function gradeQuiz(candidateAnswers) {
 
   // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  let grade = 0;
+  let totalGrade = 0;
   for(i = 0; i < questions.length; i++){
     if(candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
         console.log("Question " + [i + 1] +": Correct!");
-        grade++;
+        totalGrade++;
         }else{
         console.log("Question " + [i + 1]+": Incorrect! Correct Answer: " + correctAnswers[i] + ".");
       }
   }
   //Grade The Quizz
+  
   console.log(`Candidate Name: ${candidateName} `);
     for(i = 0; i < questions.length; i++){
       console.log(questions[i]);
       console.log(` Your answer: ${candidateAnswers[i]}`);
       console.log(` Correct Answer: ${correctAnswers[i]}`);
     }
-    console.log(">>> Overall Grade: " + (grade / questions.length) * 100 + "% (" + grade + " of 5 responses correct) <<<");
-    if(grade / questions.length * 100 >= 80) {
-      console.log(">>> Status: PASSED <<<");
-    } else {
-      console.log(">>> Status: FAILED <<<");
+    let grade =(totalGrade / questions.length) * 100;
+    console.log(`>>> Overall Grade: ${grade}% (${totalGrade} of ${questions.length} responses correct) <<<`);
+  
+      if (grade >= 80){
+        console.log(">>> Status: PASSED <<<");
+      } else {
+        console.log(">>> Status: FAILED <<<");
+      }
+      return grade;
     }
-  return grade;
-}
 
 function runProgram() {
   
