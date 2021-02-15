@@ -37,7 +37,6 @@ function gradeQuiz(candidateAnswers) {
   for(let i = 0; i < questions.length; i++){
     if(candidateAnswers[i].toLowerCase() === correctAnswers[i].toLowerCase()){
         console.log(`Question ${[i + 1]} : Correct!`);
-        grade++;
         }else{
         console.log(`Question ${[i + 1]} Incorrect! Correct Answer: ${correctAnswers[i]}.`);
       }
